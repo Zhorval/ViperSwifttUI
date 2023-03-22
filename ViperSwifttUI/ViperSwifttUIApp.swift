@@ -9,12 +9,12 @@ import SwiftUI
 
 @main
 struct ViperSwifttUIApp: App {
+    
     let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TaskRouter().listView(context:persistenceController.container.viewContext)
         }
     }
 }
